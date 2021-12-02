@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HomeController">
+   <right>
+      <GridPane BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <Pane prefHeight="500.0" prefWidth="200.0" style="-: ;" styleClass="right_side_pane" stylesheets="@application.css">
+                     <children>
+                        <Text fill="WHITE" layoutX="41.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For Password related &#10;queries email at::&#10;helpVMS@gmail.com&#10;For any other queries, &#10;visit::&#10;gov.vms@gmail.com&#10;" textAlignment="JUSTIFY" />
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+   </right>
+   <center>
+      <Group>
+         <children>
+            <GridPane alignment="CENTER" prefHeight="500.0" prefWidth="403.0" BorderPane.alignment="TOP_LEFT">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="244.0" minHeight="10.0" prefHeight="195.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="407.0" minHeight="10.0" prefHeight="305.0" valignment="CENTER" vgrow="ALWAYS" />
+              </rowConstraints>
+               <children>
+                  <Text fill="#0000d9" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME TO, &#10;VOTING MANAGEMENT SYSTEM" textAlignment="CENTER" wrappingWidth="400.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Text>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN AS," textAlignment="CENTER" wrappingWidth="402.5625">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Button fx:id="Adminlogin" contentDisplay="CENTER" mnemonicParsing="false" onAction="#AdminLoginScreen" prefHeight="31.0" prefWidth="148.0" styleClass="loginIn_Asadmin" stylesheets="@application.css" text="ADMIN" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="VoterLogin" contentDisplay="CENTER" layoutX="138.0" layoutY="65.0" mnemonicParsing="false" onAction="#Voter_login" prefHeight="31.0" prefWidth="148.0" styleClass="loginIn_Asadmin" stylesheets="@application.css" text="VOTER" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </GridPane>
+         </children>
+      </Group>
+   </center>
+</BorderPane>

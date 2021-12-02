@@ -1,0 +1,105 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+
+.addSymbolbtn{
+	-fx-padding: 0px 5px;
+	-fx-background-color: #3333ff;
+	-fx-border-radius: 50px;
+	-fx-background-radius: 50px;
+	-fx-border-width:1px;	
+	
+}
+.addSymbolbtn:hover{
+	-fx-background-color: #00008c;
+}
+
+
+
+.GoBack{
+	-fx-background-color: #3333ff;
+	-fx-text-fill: #fff;
+}
+
+.MiddlePageColor{
+	-fx-background-color: #e6e6ff;
+}
+
+
+.sidebar_color{
+	 -fx-background-color:#3333ff;
+}
+
+
+.Sidebar-btnnotActive{
+	-fx-background-color: none;
+	-fx-text-fill: black;
+	-fx-border-width:0px;	
+	-fx-text-fill: #fff;
+}
+.Sidebar-btnnotActive:hover {
+	-fx-border-width: 2px 2px 2px 2px;
+	-fx-border-style: solid;
+	-fx-border-color: #00008c;
+}
+
+
+.Sidebar-btn{
+	-fx-background-color: #fff;
+	-fx-text-fill: black;
+	-fx-background-radius: 0px;	
+}
+
+
+
+
+.loginIn_Asadmin{
+	-fx-padding: 0px 5px;
+	-fx-background-color: #3333ff;
+	-fx-border-radius: 50px;
+	-fx-background-radius: 50px;
+	-fx-border-width:1px;	
+	
+}
+
+.loginIn_Asadmin:hover {
+    -fx-background-color: #9999ff;
+    -fx-text-fill: #ffffff;
+}
+
+
+.loginIn_AsadminSide{
+	-fx-border-width:1px;	
+	-fx-border-style: solid;
+	-fx-text-fill: #ffffff;
+	-fx-border-color: #00004d;
+}
+
+.loginIn_AsadminSide:hover{
+	-fx-background-color: #00004d;
+    -fx-text-fill: #ffffff;
+}
+
+
+.SignUp:hover{
+	-fx-border-width:1px;	
+	-fx-border-style: solid;
+	-fx-border-color: #00008c;
+}
+
+
+.right_side_pane{
+	-fx-background-color: #3333ff;
+}
+
+.CNIC_btn{
+	-fx-border-width:0px 0px 1px 0px;	
+	-fx-border-color: black;
+	-fx-background-color: none;
+}
+.Passwd_btn{
+	-fx-border-width:0px 0px 1px 0px;	
+	-fx-border-color: black;
+	-fx-background-color: none;
+	
+}
+

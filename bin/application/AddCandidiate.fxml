@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddCandidiateController">
+   <children>
+      <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="78.0" prefWidth="173.0" styleClass="right_side_pane" stylesheets="@application.css">
+               <children>
+                  <ImageView fitHeight="49.0" fitWidth="52.0">
+                     <image>
+                        <Image url="D:\App+Semisters\SEMISTERS\Semister5\Advance Programing\Works\VMS\src\application\1.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" top="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello Anas," wrappingWidth="84.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" top="35.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" styleClass="right_side_pane" stylesheets="@application.css" GridPane.columnIndex="1">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Voting Managemnt System" textAlignment="CENTER" wrappingWidth="188.13671875">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="25.0" top="35.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Control Panel" textAlignment="RIGHT" wrappingWidth="178.513671875">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" top="35.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <VBox prefHeight="422.0" prefWidth="132.0" styleClass="right_side_pane" stylesheets="@application.css" GridPane.rowIndex="1">
+               <children>
+                  <Button fx:id="Home" mnemonicParsing="false" onAction="#loadHome" prefHeight="48.0" prefWidth="162.0" styleClass="Sidebar-btnnotActive" stylesheets="@application.css" text="Home">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="Symbol" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#AddSymbol" prefHeight="48.0" prefWidth="162.0" styleClass="Sidebar-btnnotActive" stylesheets="@application.css" text="Add Symbol">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="Party" layoutX="10.0" layoutY="58.0" mnemonicParsing="false" onAction="#AddParty" prefHeight="48.0" prefWidth="162.0" styleClass="Sidebar-btnnotActive" stylesheets="@application.css" text="Add Party">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="Cadandiate" layoutX="10.0" layoutY="106.0" mnemonicParsing="false" onAction="#AddCandidiate" prefHeight="48.0" prefWidth="162.0" stylesheets="@application.css" text="Add Candidate">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="Sidebar-btnnotActive" />
+                        <String fx:value="Sidebar-btn" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="Results" mnemonicParsing="false" onAction="#ShowResults" prefHeight="48.0" prefWidth="162.0" styleClass="Sidebar-btnnotActive" stylesheets="@application.css" text="Show Results">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="Logout" layoutX="10.0" layoutY="154.0" mnemonicParsing="false" onAction="#loadlogoutAction" prefHeight="48.0" prefWidth="162.0" styleClass="Sidebar-btnnotActive" stylesheets="@application.css" text="Log Out">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <AnchorPane prefHeight="500.0" prefWidth="400.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Text layoutX="36.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Candidate" textAlignment="CENTER" wrappingWidth="123.11328125">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        <VBox layoutX="33.0" layoutY="89.0" prefHeight="245.0" prefWidth="254.0">
+                           <children>
+                              <TextField id="CNIC_btn" fx:id="CNIC_text" prefHeight="27.0" prefWidth="254.0" promptText="Enter Candiate Name" styleClass="CNIC_btn" stylesheets="@application.css">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </TextField>
+                              <Button fx:id="ShowsOptions" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#SelectSymbol" prefHeight="26.0" prefWidth="269.0" styleClass="Passwd_btn" stylesheets="@application.css" text="Select Symbol                                               V">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="AddCandidiate" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#AddCandidiateAction" prefHeight="22.0" prefWidth="76.0" styleClass="addSymbolbtn" stylesheets="@application.css" text="+Add" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="7.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="176.0" minWidth="10.0" percentWidth="27.0" prefWidth="0.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="588.0" minWidth="0.0" prefWidth="424.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="162.0" minHeight="0.0" prefHeight="78.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="472.0" minHeight="10.0" prefHeight="422.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+   </children>
+</AnchorPane>

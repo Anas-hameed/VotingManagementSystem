@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
+   <right>
+      <HBox id="right_side_pane" alignment="CENTER" prefHeight="500.0" prefWidth="234.0" styleClass="sidebar_color" stylesheets="@application.css" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Pane prefHeight="500.0" prefWidth="245.0">
+                     <children>
+                        <Text fill="WHITE" layoutX="58.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New here?" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="58.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign up to cast your &#10;vote to your favorite&#10;party.">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Button id="loginIn_Asadmin" fx:id="Signup" alignment="CENTER" layoutX="60.0" layoutY="329.0" mnemonicParsing="false" onAction="#SignUp" prefHeight="34.0" prefWidth="124.0" stylesheets="@application.css" text="SIGN UP" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="loginIn_Asadmin" />
+                              <String fx:value="loginIn_AsadminSide" />
+                              <String fx:value="SignUp" />
+                           </styleClass>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
+         </children></HBox>
+   </right>
+   <center>
+      <GridPane>
+         <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="ALWAYS" />
+         </rowConstraints>
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="500.0" prefWidth="400.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Text layoutX="81.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wecome Back," textAlignment="CENTER" wrappingWidth="203.11328125">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Text>
+                        <VBox alignment="TOP_CENTER" layoutX="56.0" layoutY="150.0" prefHeight="245.0" prefWidth="254.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="29.0" prefWidth="254.0" text="CNIC" />
+                              <TextField id="CNIC_btn" fx:id="CNIC_text" alignment="CENTER" prefHeight="34.0" prefWidth="254.0" styleClass="CNIC_btn" stylesheets="@application.css" />
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="254.0" text="Password">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <PasswordField id="Passwd_btn" fx:id="passwd_Text" alignment="CENTER" prefHeight="19.0" prefWidth="254.0" styleClass="Passwd_btn" stylesheets="@application.css" />
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="59.0" prefWidth="254.0" text="forgot password ?" textAlignment="CENTER" textOverrun="CLIP" VBox.vgrow="ALWAYS" />
+                              <Button id="loginIn_Asadmin" fx:id="SignInbtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#SignIn" prefHeight="34.0" prefWidth="169.0" styleClass="loginIn_Asadmin" stylesheets="@application.css" text="SIGN IN" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <Button id="loginIn_Asadmin" fx:id="GoBack" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="452.0" mnemonicParsing="false" onAction="#goback" prefHeight="34.0" prefWidth="59.0" styleClass="GoBack" stylesheets="@application.css" text="Back" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

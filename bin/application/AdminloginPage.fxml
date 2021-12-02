@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminLoginControllor">
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="500.0" prefWidth="400.0">
+               <children>
+                  <Text layoutX="73.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login As Admin" textAlignment="CENTER" wrappingWidth="220.11328125">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <VBox alignment="TOP_CENTER" layoutX="56.0" layoutY="150.0" prefHeight="245.0" prefWidth="254.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="29.0" prefWidth="254.0" text="Name" />
+                        <TextField id="CNIC_btn" fx:id="Nametxt" alignment="CENTER" layoutX="10.0" layoutY="68.0" prefHeight="34.0" prefWidth="254.0" styleClass="CNIC_btn" stylesheets="@application.css" />
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="254.0" text="Password">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <PasswordField id="Passwd_btn" fx:id="passwd_Text" alignment="CENTER" prefHeight="19.0" prefWidth="254.0" styleClass="Passwd_btn" stylesheets="@application.css" />
+                        <Button id="loginIn_Asadmin" fx:id="IoginIn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#loginInAccount" prefHeight="34.0" prefWidth="169.0" styleClass="loginIn_Asadmin" stylesheets="@application.css" text="SIGN IN" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="35.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </center>
+   <right>
+      <HBox id="right_side_pane" alignment="CENTER" prefHeight="500.0" prefWidth="234.0" style="-fx-background-color: #a6a6ff;" styleClass="right_side_pane" stylesheets="@application.css" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="500.0" prefWidth="245.0" styleClass="right_side_pane" stylesheets="@application.css">
+               <children>
+                  <Text fill="WHITE" layoutX="16.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wecome Admin," textAlignment="CENTER" wrappingWidth="201.04296875">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="22.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login in your account, to View&#10;the result, add, manage parties,&#10;allocate and symbols and much&#10;more." wrappingWidth="205.3125">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </right>
+</BorderPane>
