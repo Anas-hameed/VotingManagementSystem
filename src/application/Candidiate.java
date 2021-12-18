@@ -38,6 +38,9 @@ public class Candidiate {
 		return p.AddCandidate(Name,SymbolID);
 	}
 	
+	public static boolean CastVote(int id) {
+		return p.CastVote(id);
+	}
 	
 	
 	

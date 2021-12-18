@@ -51,12 +51,20 @@ public class CastVoteController {
 
     @FXML
     void AddVote(ActionEvent event) {
-
+    	// Null
     }
 
     @FXML
-    void CastVoteAction(ActionEvent event) {
-
+    void CastVoteAction(ActionEvent event) {    	
+    	if(Setid==-1) {
+    		showDialog("Please select the symbol first");
+    	}
+    	boolean con= Candidiate.CastVote(Setid);
+    	if(con) {
+    		showDialog("Sucessfully casted the vote");
+    	}else {
+    		showDialog("Failed to cast the vote");
+    	}
     }
     
     

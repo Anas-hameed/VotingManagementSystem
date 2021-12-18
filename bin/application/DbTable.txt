@@ -1,0 +1,13 @@
+
+
+create database VMS;
+
+create table symbols (symbolId int AUTO_INCREMENT, symbolname varchar(25), PRIMARY KEY(symbolId) ); 
+
+create table party (PartyId int AUTO_INCREMENT, symbolId int, PartyName varchar(25), Agenda varchar(200), PRIMARY KEY(PartyId), 
+ FOREIGN KEY (symbolId) REFERENCES symbols(symbolId) ); 
+
+create table candidate (CandidateID int AUTO_INCREMENT,SymbolId int,Name varchar(25), VoteCount int default(0),  PRIMARY KEY(CandidateID), 
+FOREIGN KEY (symbolId) REFERENCES symbols(symbolId));
+
+create table voter (Name varchar(25), CNIC char(13), password varchar(30), PRIMARY KEY(CNIC) );

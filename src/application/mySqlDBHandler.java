@@ -8,14 +8,17 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 
 public class mySqlDBHandler extends PresistentHandler {
-	Connection con;
+	static Connection con;
 	
-	private boolean Esblishconnection() throws SQLException{
+	private static boolean Esblishconnection() throws SQLException{
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/VotingSystem","root","12345");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/VMS","root","12345");
 			return true;
 		
 		}catch(ClassNotFoundException err)  {
@@ -90,7 +93,7 @@ public class mySqlDBHandler extends PresistentHandler {
 		try {
 			if(Esblishconnection())
 			{
-				String sql="insert into symbols(PartyName) values(?);";
+				String sql="insert into symbols(SymbolName) values(?);";
 				PreparedStatement statement=con.prepareStatement(sql);
 				statement.setString(1, Name);
 				int rowsUpdated=statement.executeUpdate();
@@ -182,12 +185,12 @@ public class mySqlDBHandler extends PresistentHandler {
 				if(rs.next())
 				{
 					int SymbolId	= rs.getInt("SymbolId");
-					String PartyName= rs.getString("PartyName");
+					String PartyName= rs.getString("symbolName");
 					Symbols.put(SymbolId, PartyName);
 					while (rs.next())
 					{
 						SymbolId	= rs.getInt("SymbolId");
-						PartyName= rs.getString("PartyName");
+						PartyName= rs.getString("symbolName");
 						Symbols.put(SymbolId, PartyName);
 					}
 				}
@@ -208,4 +211,72 @@ public class mySqlDBHandler extends PresistentHandler {
 		return null;
 	}
 
+	@Override
+	public boolean CastVote(int SymbolId) {
+		// TODO Auto-generated method stub
+		try {
+			if(Esblishconnection())
+			{
+				String sql="update candidate set votecount=votecount+1 where symbolId="+Integer.toString(SymbolId)+";";
+				System.out.println(sql);
+				
+				Statement statement=con.createStatement();
+				int rowsUpdated=statement.executeUpdate(sql);
+				if (rowsUpdated>0) {
+					System.out.println("Sucessfull Added Candidiate");
+					return true;
+				}
+				else {
+					System.out.println("Error in the Query");
+				}
+				
+			}
+		}
+		catch(SQLException err) {
+				System.out.println("Invalid query entered"); 
+				System.out.println(err);
+				System.out.println("----------------------------------------------");
+				err.printStackTrace();
+			}		
+		return false;
+	}
+	
+	
+	public static ObservableList<Results> getAllRecords() throws ClassNotFoundException, SQLException{
+		try {
+			if(Esblishconnection())
+			{
+				String sql="select Name, p.partyName, s.symbolName,c.voteCount from candidate c left outer join party p on c.SymbolId=p.SymbolId join symbols s where s.symbolID=c.symbolid;";
+				Statement statement=con.createStatement();
+				ResultSet rs = statement.executeQuery(sql);
+				return getEmployeesObject(rs);
+			}
+		}
+		catch(SQLException err) {
+			System.out.println("Invalid query entered"); 
+			System.out.println(err);
+			System.out.println("----------------------------------------------");
+			err.printStackTrace();
+		}
+		return null;
+	}
+	private static ObservableList<Results> getEmployeesObject(ResultSet rsSet) throws SQLException, ClassNotFoundException{
+		ObservableList<Results> emp= FXCollections.observableArrayList();
+		try {			
+			while(rsSet.next()) {
+				Results res = new Results();
+				res.setcandidateName(rsSet.getString("Name"));
+				res.setBelongTo(rsSet.getString("partyName"));
+				res.setAlocatedSymbol(rsSet.getString("symbolName"));
+				res.setVoteCount(rsSet.getInt("voteCount"));
+				emp.add(res);
+			}
+		}catch(Exception e) {
+			System.out.println("Error in alterating the Array");
+			throw e;
+		}
+		return emp;
+	}
+
+	
 }

@@ -1,28 +1,27 @@
 package application;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class AddSymbolController {
+public class ShowResultController {
 
     @FXML
     private Button Party;
 
     @FXML
     private Button Symbol;
-
-    @FXML
-    private TextField CNIC_text;
 
     @FXML
     private Button Logout;
@@ -35,13 +34,39 @@ public class AddSymbolController {
     
     @FXML
     private Button Results;
-
     
     String bgcolor="-fx-background-color: #fff; -fx-text-fill: black;";
-    String CurrentPage= "Addsymbol.fxml";
+    String CurrentPage= "ShowResults.fxml";
     String file;
+    
+    @FXML
+    private TableView<Results> TableResult;
 
-   
+    @FXML
+    private TableColumn<Results, String> SymbolName;
+
+    @FXML
+    private TableColumn<Results, String> Belonging;
+
+    @FXML
+    private TableColumn<Results, Integer> Votes;
+
+    @FXML
+    private TableColumn<Results, String> Name;
+    
+	@FXML
+	void initialize() throws Exception{
+		Name.setCellValueFactory(cellData->	new SimpleStringProperty(cellData.getValue().getcandidateName()));
+		Belonging.setCellValueFactory(cellData->	new SimpleStringProperty(cellData.getValue().getBelongTo()));
+		SymbolName.setCellValueFactory(cellData->	new SimpleStringProperty(cellData.getValue().getAlocatedSymbol()));
+		Votes.setCellValueFactory(cellData->	new SimpleIntegerProperty(cellData.getValue().getVoteCount()).asObject());	
+		ObservableList<Results> emplist = mySqlDBHandler.getAllRecords();		
+		if(emplist==null) {
+			System.out.println("Hello  I am empty");
+		}
+		TableResult.setItems(emplist);	
+	}
+            
     void loadScene(ActionEvent event) throws Exception{
     	if(CurrentPage.equalsIgnoreCase(file)) {
     		return;
@@ -156,37 +181,4 @@ public class AddSymbolController {
     	loadScene(event);
     }
     
-    @FXML
-    void AddSymbolAction(ActionEvent event) {
-    	// Adding the symbol 
-    	String str= CNIC_text.getText();
-    	if(str.isEmpty()) {	
-    		Alert alert = new Alert(AlertType.INFORMATION);
-    		alert.setTitle("Information Dialog");
-    		alert.setHeaderText(null);
-    		alert.setContentText("Input field cann't be Empty");
-    		alert.showAndWait();
-    		return;
-    	}    	
-    	// Interaction with the Db goes Here
-    	Symbols s= new Symbols(str);
-    	boolean cond=s.saveSymbol();
-    	if(cond) {
-    		Alert alert = new Alert(AlertType.INFORMATION);
-    		alert.setTitle("Information Dialog");
-    		alert.setHeaderText(null);
-    		alert.setContentText("Symbol added Sucessfully");
-    		alert.showAndWait();
-    		return;
-    		
-    	}
-    	else {
-    		Alert alert = new Alert(AlertType.INFORMATION);
-    		alert.setTitle("Information Dialog");
-    		alert.setHeaderText(null);
-    		alert.setContentText("Failed in establishing Connection");
-    		alert.showAndWait();    		
-    	}    	
-    }
-
 }

@@ -60,8 +60,9 @@ public class AdminPanelController {
     	Symbol.setStyle("-fx-background-color: none; ");
     	Logout.setStyle("-fx-background-color: none; ");
     	Cadandiate.setStyle("-fx-background-color: none; ");
+    	Results.setStyle("-fx-background-color: none; ");
     	Home.setStyle(bgcolor);
-    	
+ 
     	// Add the Home Page Loading
     	file="AdminPanelPage.fxml";
     	loadScene(event);
@@ -77,6 +78,7 @@ public class AdminPanelController {
     	Symbol.setStyle(bgcolor);
     	Logout.setStyle("-fx-background-color: none; ");
     	Cadandiate.setStyle("-fx-background-color: none; ");
+    	Results.setStyle("-fx-background-color: none; ");
     	// Add the Symbol Page Load    	
     	file="Addsymbol.fxml";
     	loadScene(event);
@@ -93,7 +95,7 @@ public class AdminPanelController {
     	Symbol.setStyle("-fx-background-color: none; ");
     	Logout.setStyle("-fx-background-color: none; ");
     	Cadandiate.setStyle("-fx-background-color: none; ");
-    	
+    	Results.setStyle("-fx-background-color: none; ");
     	// Add the Party Page Loading
     	file="AddParty.fxml";
     	loadScene( event);
@@ -108,7 +110,7 @@ public class AdminPanelController {
     	Symbol.setStyle("-fx-background-color:none; ");
     	Logout.setStyle("-fx-background-color:none; ");
     	Cadandiate.setStyle(bgcolor);
-    	
+    	Results.setStyle("-fx-background-color: none; ");
     	file="AddCandidiate.fxml";
     	loadScene( event);
 
@@ -121,6 +123,9 @@ public class AdminPanelController {
     	Symbol.setStyle("-fx-background-color:none; ");
     	Logout.setStyle(bgcolor);
     	Cadandiate.setStyle("-fx-background-color:none; ");
+    	Results.setStyle("-fx-background-color: none; ");
+    	
+    	
     	file="AdminloginPage.fxml";
     	BorderPane root;
 		root = (BorderPane)FXMLLoader.load(getClass().getResource(file));
@@ -133,9 +138,16 @@ public class AdminPanelController {
     }
     
     @FXML
-    void ShowResults(ActionEvent event) {
-
+    void ShowResults(ActionEvent event) throws Exception {
+    	Party.setStyle("-fx-background-color: none;");
+    	Symbol.setStyle("-fx-background-color: none; ");
+    	Logout.setStyle("-fx-background-color: none; ");
+    	Cadandiate.setStyle("-fx-background-color: none; ");
+    	Home.setStyle("-fx-background-color: none;");
+    	Results.setStyle(bgcolor);
+    	// Add the Home Page Loading
+    	file="ShowResults.fxml";
+    	loadScene(event);
     }
-
 
 }

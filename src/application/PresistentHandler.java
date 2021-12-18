@@ -10,6 +10,6 @@ public abstract class PresistentHandler {
 	abstract public boolean AddParty(String Nane, int symbolID, String Agenda);
 	abstract public boolean AddCandidate(String Name, int SymbolID);
 	abstract public HashMap<Integer,String> fetchSymbol();
-	
+	abstract public boolean CastVote(int SymbolId);
 	
 }
